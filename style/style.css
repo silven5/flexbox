@@ -1,0 +1,671 @@
+        /*Загальні налаштування*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            color: rgb(10, 10, 10);
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        /*Загальні класи, що повторюються*/
+        
+        .bg__grey {
+            background: #2F4858;
+        }
+        
+        .bg__orange {
+            background: #FFB12B;
+        }
+        
+        .bg__green {
+            background: #18BD4F;
+        }
+        
+        .bg__lwhite {
+            background: #FFFBF4;
+        }
+        
+        .bg__lgrey {
+            background: #F7FDF9;
+        }
+        
+        .bg__llgrey {
+            background: #F4F5F6
+        }
+        
+        .color__red {
+            color: #FE5C4D;
+        }
+        
+        .color__green {
+            color: #18BD4F;
+        }
+        /*Прелоадер*/
+        
+        .preloader {
+            /*фіксоване позиціонування*/
+            position: fixed;
+            /* координати */
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            /* фоновий колір */
+            background: #e0e0e0;
+            /* Розміщення вище за всіх */
+            z-index: 1001;
+        }
+        
+        .preloader__row {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            margin-top: -35px;
+            margin-left: -35px;
+            text-align: center;
+            /*Задаємо налаштування анімації*/
+            /*Ім'я анімації -preloader-rotate*/
+            /*Довжина циклу анімації -2s*/
+            /*Кількість повторів - infinite (нескінченність)*/
+            /*Як проходить анімація у кожен цикл - linear*/
+            animation: preloader-rotate 2s infinite linear;
+        }
+        
+        .preloader__item {
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            background-color: #337ab7;
+            border-radius: 100%;
+            width: 35px;
+            height: 35px;
+            animation: preloader-bounce 2s infinite ease-in-out;
+        }
+        
+        .preloader__item:last-child {
+            top: auto;
+            bottom: 0;
+            animation-delay: -1s;
+        }
+        /*Реалізація анімації - обертання на 360*/
+        
+        @keyframes preloader-rotate {
+            /*Ключові кадри*/
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /*Реалізація анімації - маштабування по Ох*/
+        
+        @keyframes preloader-bounce {
+            /*Ключові кадри*/
+            0%,
+            100% {
+                transform: scale(0);
+            }
+            /*Ключові кадри*/
+            50% {
+                transform: scale(1);
+            }
+        }
+        
+        .loaded_hiding .preloader {
+            /*Перехідний стан */
+            transition: 0.3s opacity;
+            opacity: 0;
+        }
+        
+        .loaded .preloader {
+            display: none;
+        }
+        /*Заголовок сторінки*/
+        
+        .header {
+            background: url(../Image/top-view-vegetables-fruits-bag.jpg) 100% 100% no-repeat;
+            background-size: cover;
+            width: 100%;
+            display: flex;
+            height: 883.89px;
+            flex-direction: column;
+        }
+        /*Перша полоса*/
+        
+        .header__first {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 54px;
+        }
+        
+        .logo {
+            width: 30%;
+            text-align: center;
+        }
+        
+        .header_logo__text {
+            font-family: 'Playball', cursive;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+            line-height: 47px;
+        }
+        
+        .header__first__menu {
+            width: 80%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .main-menu {
+            height: 96%;
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .main-menu__content {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        
+        .main-menu a,
+        .main-menu a:visited {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333333;
+        }
+        
+        .main-menu a:hover {
+            color: rgb(3, 48, 78);
+            text-decoration: underline;
+            font-weight: bolder;
+            font-size: 2.2vh;
+        }
+        
+        .search {
+            background: #D0FFD2;
+            border-radius: 3px;
+            width: 120px;
+            height: 30px;
+            font-style: italic;
+            font-weight: 300;
+            padding-left: 8px;
+            background-image: url('../Image/search_min.png');
+            background-position: 90px;
+            background-repeat: no-repeat;
+            margin-left: 30px;
+            border: none;
+        }
+        
+        .user__icon {
+            padding-left: 58px;
+            color: black;
+            cursor: pointer;
+        }
+        
+        .user__icon:hover {
+            color: thistle;
+        }
+        /*Секція з текстом і кнопкою заголовку*/
+        
+        .header__section {
+            margin-top: 10%;
+            width: 40%;
+            height: 60%;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-left: 120px;
+            color: #333333;
+        }
+        
+        .header__section__fresh {
+            font-style: normal;
+            font-size: 3vh;
+            line-height: 29px;
+            color: #FFB12B;
+            font-weight: bolder;
+        }
+        
+        .header__section__h1 {
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 4.5vh;
+            line-height: 74px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .header__section__text {
+            font-weight: bolder;
+            font-size: 2.3vh;
+            line-height: 26px;
+        }
+        
+        .header__section__button {
+            margin-top: 40px;
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+            padding-top: 9px;
+        }
+        
+        .header__section__button a {
+            color: #FFFFFF;
+            font-weight: bolder;
+            font-size: 2vh;
+            line-height: 22px;
+        }
+        /*Основний вміст*/
+        /*Секція з акціями*/
+        
+        .action {
+            margin-top: -7%;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto
+        }
+        
+        .action__card {
+            width: 30%;
+            height: 220px;
+            box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-left: 40px;
+            margin-right: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .action__box {
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        
+        .action__text {
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 3vh;
+            line-height: 40px;
+            display: block;
+            width: 160px;
+        }
+        
+        .action__box__img {
+            height: 220px;
+            width: 200px;
+            overflow: hidden;
+        }
+        
+        .action__box__img__bg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .action__box__egg {
+            background-image: url("../Image/PikPng.com_eggs-png_3245121.png")
+        }
+        
+        .action__box__vegetables {
+            background-image: url("../Image/pngwing.com.png")
+        }
+        
+        .action__box__fruit {
+            background-image: url("../Image/kisspng-smoothie-fruit-salad-berry-breakfast-fruit-salad-platter-5a82bf3f3e5863.8065863115185180792554.png")
+        }
+        
+        .action__button {
+            margin-top: 33px;
+            width: 126px;
+            height: 30px;
+            border-radius: 3px;
+            text-align: center;
+            padding-top: 9px;
+        }
+        
+        .action__button a {
+            color: #FFFFFF;
+            font-weight: bolder;
+            font-size: 1.5vh;
+            line-height: 15px;
+        }
+        /*Друга секція, чому саме ми*/
+        
+        .choise {
+            display: flex;
+            margin-bottom: 30px;
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+        
+        .choise__card {
+            border-radius: 25px;
+            width: 640px;
+            height: 800px;
+            background: url("../Image/dose-juice-atUjuLuFEcc-unsplash.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .choise__text {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .choise__h2 {
+            font-weight: bolder;
+            font-size: 6vh;
+            line-height: 53px;
+            padding-left: 70px;
+        }
+        
+        .choise__text__p {
+            padding-left: 70px;
+            padding-top: 40px;
+        }
+        
+        .choise ul li {
+            list-style-type: none;
+        }
+        
+        .choise ul li:before {
+            content: url("../Image/marker.jpg");
+            padding-right: 20px;
+        }
+        /*Секція з дискоунтом*/
+        
+        .discount {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .discount__card {
+            width: 1000px;
+            height: 400px;
+            border-radius: 35px;
+            margin-bottom: -10%;
+            background: url("../Image/pratiksha-mohanty.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .discount__h2 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 4vh;
+            line-height: 53px;
+            /* or 126% */
+            text-align: center;
+            color: #FFFFFF;
+            width: 60%;
+            height: 106px;
+        }
+        /*Форма для відправки електроної адреси*/
+        
+        form {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .email {
+            border: none;
+            margin: 0;
+            width: 500px;
+            height: 50px;
+            margin-top: 32px;
+            background: #FFFFFF;
+            border-radius: 31px;
+            font-size: 2vh;
+            line-height: 15px;
+            color: rgba(51, 51, 51, 0.6);
+            padding-left: 40px;
+        }
+        
+        .email__button {
+            border: none;
+            margin: 0;
+            width: 100px;
+            height: 40px;
+            border-radius: 26px;
+            color: white;
+            font-weight: 500;
+            font-size: 2vh;
+            line-height: 15px;
+            cursor: pointer;
+            transition: color .2s;
+            position: absolute;
+            top: 38px;
+            left: 430px;
+        }
+        /*Футер*/
+        
+        .footer {
+            display: flex;
+            background: #333333;
+            color: white;
+            width: 100%;
+            height: 380px;
+            padding-top: 230px;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        
+        .footer__content {
+            display: flex;
+        }
+        
+        .footer__section {
+            display: flex;
+            width: 50%;
+            justify-content: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        
+        .footer__info {
+            padding-left: 120px;
+        }
+        
+        .footer__info__text {
+            width: 292px;
+            height: 45px;
+            margin-top: 10px;
+            margin-bottom: 26px;
+            font-size: 1.7vh;
+        }
+        
+        .email__footer {
+            border: none;
+            width: 320px;
+            height: 46px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-sizing: border-box;
+            border-radius: 8px;
+            background: #333333;
+            padding-left: 18px;
+            background-image: url('../Image/arrow.png');
+            background-position: 290px;
+            background-repeat: no-repeat;
+        }
+        
+        .email__footer::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer__text {
+            font-size: 1.9vh;
+            line-height: 17px;
+            padding-top: 10px;
+        }
+        
+        .footer__menu {
+            width: 100px;
+        }
+        
+        .footer h2 {
+            font-size: 2.2vh;
+            line-height: 22px;
+        }
+        
+        .footer__menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .footer__menu a:hover {
+            color: thistle;
+        }
+        
+        .footer__contact {
+            width: 190px;
+            margin-left: 20px;
+        }
+        
+        .footer hr {
+            margin-top: 60px;
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+        
+        .footer__social {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 30px;
+        }
+        
+        .footer__social i {
+            padding-left: 20px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .footer__social i:hover {
+            color: thistle;
+        }
+        /*Адаптивна версія */
+        
+        @media screen and (max-width: 850px) {
+            .header__first {
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            .main-menu {
+                width: 80%;
+            }
+            .main-menu__content {
+                font-size: medium;
+            }
+            .choise {
+                flex-direction: column;
+                align-items: center;
+                margin: 0 0 0 0;
+            }
+            .action {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0;
+            }
+            .action__card {
+                width: 60%;
+                margin-top: 2%;
+            }
+            .discount__h2 {
+                font-size: 4vh;
+            }
+        }
+        
+        @media screen and (max-width: 700px) {
+            .main-menu {
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 60%;
+            }
+            .discount__card {
+                width: 100%;
+                margin-bottom: 0;
+            }
+            .footer {
+                padding-top: 0;
+                height: 580px;
+            }
+            .choise__card {
+                width: 400px;
+            }
+            .footer__content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer__section {
+                width: 100%;
+                align-items: baseline;
+            }
+            .footer__contact {
+                padding-left: 100px;
+            }
+            .footer__menu {
+                padding-left: 120px;
+            }
+        }
+        
+        @media screen and (max-width: 550px) {
+            .main-menu__content {
+                font-size: small;
+            }
+            .header {
+                height: 250.89px;
+                background-size: auto;
+            }
+            .main-menu a,
+            .main-menu a:visited {
+                color: white;
+            }
+            .header__section {
+                display: none;
+            }
+            .email {
+                width: 90%;
+            }
+            .discount__h2 {
+                font-size: 3vh;
+                line-height: 30px;
+            }
+            .email__button {
+                z-index: 10;
+                position: relative;
+                left: 30%;
+            }
+            .email__footer {
+                width: 80%;
+                background-position: 270px;
+            }
+        }

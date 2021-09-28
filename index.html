@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Flex</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Playball&display=swap');
+    </style>
+    <script src="https://use.fontawesome.com/08c46a2805.js"></script>
+    <script>
+        window.onload = function() {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function() {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
+    </script>
+</head>
+<!--Дизайн https://www.figma.com/file/YTt1Jx8vQlLaZPCMFDpxyI/organicfoodwebsite?node-id=0%3A33-->
+
+<body>
+    <!--Прелоадер сторінки-->
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
+    </div>
+    <!--Header-->
+    <header class="header">
+        <!--Верхня полоса з меню-->
+        <div class="header__first color__green">
+            <div class="logo">
+                <span class="header_logo__text">Dudeshape.</span>
+            </div>
+            <div class="header__first__menu">
+                <nav class="main-menu main-menu__content">
+
+                    <div class="main-menu__box "><a href="#">Home</a></div>
+
+                    <div class="main-menu__box "><a href="#">All categries</a></div>
+                    <div class="main-menu__box"><a href="#">New products</a></div>
+                    <div class="main-menu__box"><a href="#"> Offers</a></div>
+                    <div class="main-menu__box"><a href="#">About us</a></div>
+                </nav>
+
+                <input type="text" name="search" placeholder="Search" class="search">
+                <div>
+                    <i class="user__icon fa fa-user"></i>
+                </div>
+            </div>
+        </div>
+        <!--Секція з кнопкою та текстом-->
+        <section class="header__section">
+            <span class="header__section__fresh">100% fresh</span>
+            <h1 class="header__section__h1">Organic food help you fit & healthy</h1>
+            <p class="header__section__text">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.
+            </p>
+            <div class="header__section__button bg__green">
+                <a href="#">SHOP NOW</a>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="action">
+            <div class="action__card bg__lgrey">
+                <div class="action__box">
+                    <p class="action__text"> <span class="action__text color__green">25% OFF</span> EGG OFFERS
+                    </p>
+                    <div class="action__button bg__grey">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="action__box__img action__box__img__bg  action__box__egg">
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="action__card bg__lwhite">
+                <div class="action__box">
+                    <p class="action__text"> <span class="action__text color__green">45% OFF</span> PURE FOOD
+                    </p>
+                    <div class="action__button bg__orange">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="action__box__img action__box__img__bg  action__box__vegetables">
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div class="action__card bg__llgrey">
+                <div class="action__box">
+                    <p class="action__text"> <span class="action__text color__red">30% OFF</span> PURE FRUITS
+                    </p>
+                    <div class="action__button bg__green">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="action__box__img action__box__img__bg  action__box__fruit">
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </section>
+        <section class="choise">
+            <div class="choise__card"></div>
+            <div class="choise__text">
+                <h2 class="choise__h2">Chose the advantages of our products</h2>
+                <p class="header__section__text choise__text__p">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has .</p>
+                <ul class="header__section__text choise__text__p">
+                    <li>100% Natural</li>
+                    <li>Super healthy</li>
+                    <li>Premium quality</li>
+                    <li>Premium quality</li>
+                </ul>
+            </div>
+        </section>
+        <section class="discount">
+            <div class="discount__card">
+                <h2 class="discount__h2">Join our member and get discount up to 50%</h2>
+                <form action="#" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" class="email">
+                    <button type="submit" class="email__button bg__green ">Sign In</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section footer__info">
+                <div class="logo">
+                    <span class="header_logo__text">Dudeshape.</span>
+                </div>
+                <p class="footer__info__text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </p>
+                <input type="email" name="email__footer" placeholder="Enter your email" class="email__footer">
+            </div>
+            <div class="footer__section footer__menu">
+                <h2>Menu</h2>
+                <nav>
+
+                    <a class="footer__text" href="#">Home</a>
+
+                    <a class="footer__text" href="#">All categries</a>
+                    <a class="footer__text" href="#">New products</a>
+                    <a class="footer__text" href="#"> Offers</a>
+                    <a class="footer__text" href="#">About us</a>
+                </nav>
+            </div>
+            <div class="footer__section footer__contact">
+                <h2>Contact Us</h2>
+                <p class="footer__text">
+                    +8801628069404/Whatsup
+                </p>
+                <p class="footer__text">ha9429226@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer__social">
+            <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
